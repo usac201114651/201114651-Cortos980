@@ -1,22 +1,36 @@
 
-print ("corto1")
+A = 25
 
-NC = 651 #numero de carne
-n = NC
+def colatz (a):
+    c=[]
+    while (a != 1):
 
-def accion (n): #accion que ejecuta la secuencia
-a=0
-   while a != 1:
-    if n%2 == 0:
-        a = n/2
-        return (a)
-    else:
-        a = n * 3 +1
-        return (a)
+        if (a%2) == 0:
+            a = int(a/2)
+            c.append(a)
+            
+            
+        else:
+            a = int(a*3) + 1
+            c.append(a)
+    return (c)
 
-def imprimir (a)
-for i in range (1, a)
 
+#def escribir (fileName = 'collatz.txt'):
+fileName = 'collatz.txt'
+archivo = open(fileName, 'w')
+archivo.write('\n\nLista de collatz nueva \n')
+for i in range (2,A+1):
+    b=[i]
+    for x in colatz(i):
+        b.append(x)
+    print (b)
+    archivo.write(str(b))
+    archivo.write("\n")
+
+archivo.close()
+print ("escrito")
+    
 
 
 
